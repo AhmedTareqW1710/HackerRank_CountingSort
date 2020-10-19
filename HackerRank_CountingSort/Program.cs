@@ -28,7 +28,21 @@ class Solution
             countArray[item]++;
         }
 
-        return countArray;
+        List<int> finalCountArray = new List<int>();
+
+        for (int i = 0; i < countArray.Length; i++)
+        {
+            if (countArray[i] > 0)
+            {
+                for (int j = 0; j < countArray[i]; j++)
+                {
+                    finalCountArray.Add(i);
+                }
+            }
+        }
+
+
+        return finalCountArray.ToArray();
     }
 
     static void Main(string[] args)
